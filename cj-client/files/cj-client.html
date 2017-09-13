@@ -12,7 +12,7 @@
     <title>Cj</title>
     <link href="./semantic.min.css" rel="stylesheet" />
     <style>
-    #items, #template, #queries-wrapper, #edit, #dump {display:none;}
+    #items, #template, #queries-wrapper, #edit {display:none;}
     #error {font-weight:bold;color:red;}
     @media only screen and (max-width:767px) {
       .ui.stackable.grid > .column:not(.row) {
@@ -51,11 +51,12 @@
     </div>
   </body>
   <script src="dom-help.js">//na </script>
-  <script src="cj-client-4x.js">//na </script>
+  <script src="cj-client-0.js">//na </script>
   <script>
     window.onload = function() {
       var pg = cj();
       pg.init("/", "TPS - Task Processing System");
+      //pg.init("http://515ce56e.ngrok.io/resources?size=10", "RESTFest 2017 - Atlanta Business Data");
     }
   </script>
 </html>

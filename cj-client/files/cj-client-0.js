@@ -52,27 +52,29 @@ function cj() {
   // handle title
   function title() {
     var elm, str;
-
-    if(hasTitle(g.cj.collection)===true) {
-      str = g.cj.collection.title||g.title;
-      elm = d.find("title");
-      if(elm) {
-        elm.innerText = str;
-      }
-      elm = d.tags("title");
-      elm[0].innerText = str;
+    
+    /*
+    str = g.cj.collection.title||g.title;
+    elm = d.find("title");
+    if(elm) {
+      elm.innerText = str;
     }
+    elm = d.tags("title");
+    elm[0].innerText = str;
+    */
   }
 
   // handle content block
   function content() {
     var elm;
 
+    /*
     elm = d.find("content");
     if(elm) {
       d.clear(elm);
       elm.innerHTML = g.cj.collection.content.toString();
     }
+    */
   }
   
   // handle link collection

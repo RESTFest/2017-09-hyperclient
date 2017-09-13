@@ -69,13 +69,13 @@ function domHelp() {
       inp = node("select");
       inp.value = args.value.toString()||"";
       inp.className = "ui dropdown ";
-      if(Array.isArray(args.suggest)) {
+      if(args && args.suggest != null && Array.isArray(args.suggest)) {
         for(var ch of args.suggest) {
           opt = option(ch);
           push(opt,inp);
         }
       }
-      if(related) {
+      if(related && args.suggest != null) {
         lst = related[args.suggest.related];
         if(Array.isArray(lst)) {
           val = args.suggest.value;
@@ -95,12 +95,8 @@ function domHelp() {
     if(flg===false) {
       inp = node("input");
       if(args && args.value !=null) {
-        inp.value = args.value.toString()||"";
-        inp.type = (args.type||"text");
-      }
-      else {
-        inp.value="";
-        inp.type="text";
+         inp.value = args.value.toString()||"";
+         inp.type = (args.type||"text");
       }
     }
     

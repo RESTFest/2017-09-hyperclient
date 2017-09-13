@@ -53,13 +53,11 @@ function cj() {
   function title() {
     var elm, str;
 
-    if(hasTitle(g.cj.collection)===true) {
-      str = g.cj.collection.title||g.title;
-      elm = d.find("title");
-      elm.innerText = str;
-      elm = d.tags("title");
-      elm[0].innerText = str;
-    }
+    str = g.cj.collection.title||g.title;
+    elm = d.find("title");
+    elm.innerText = str;
+    elm = d.tags("title");
+    elm[0].innerText = str;
   }
 
   // handle content block

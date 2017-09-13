@@ -53,13 +53,13 @@ function cj() {
   function title() {
     var elm, str;
 
-    if(hasTitle(g.cj.collection)===true) {
+    //if(hasTitle(g.cj.collection)===true) {
       str = g.cj.collection.title||g.title;
       elm = d.find("title");
       elm.innerText = str;
       elm = d.tags("title");
       elm[0].innerText = str;
-    }
+    //}
   }
 
   // handle content block
@@ -161,7 +161,7 @@ function cj() {
         }
 
         // delete link
-        if(isReadOnly(item)===false) {
+        if(isReadOnly(item)===false && hasTemplate(g.cj.collection)===true) {
           a = d.anchor(
             {
               href:item.href,
@@ -217,12 +217,12 @@ function cj() {
         table = d.node("table");
         table.className = "ui table";
         for(var data of item.data) {
-          if(data.display==="true") {
+          if(data.display == null || data.display==="true") {
             tr = d.data_row(
               {
                 className:"item "+data.name,
-                text:data.prompt+"&nbsp;",
-                value:data.value+"&nbsp;"
+                text:(data.prompt||data.name)+"&nbsp;",
+                value:(data.value||"")+"&nbsp;"
               }
             );
             d.push(tr,table);
@@ -529,7 +529,7 @@ function cj() {
 
     q=0;
     form = e.target;
-    query = form.action+"?";
+    query = form.action+"/?";
     nodes = d.tags("input", form);
     for(i=0, x=nodes.length;i<x;i++) {
       if(nodes[i].name && nodes[i].name!=='') {
