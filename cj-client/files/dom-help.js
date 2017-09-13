@@ -94,9 +94,14 @@ function domHelp() {
     }
     if(flg===false) {
       inp = node("input");
-      inp.value = args.value.toString()||"";
-      inp.type = (args.type||"text");
-    }
+      if(args) {
+        inp.value = args.value.toString()||"";
+        inp.type = (args.type||"text");
+      }
+      else {
+        inp.value="";
+        inp.type="text";
+      }
     
     lbl.className = "data";
     lbl.innerHTML = args.prompt||"";

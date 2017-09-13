@@ -133,10 +133,10 @@ function sendListPage(req, res, respond) {
     rel:["home","collection"],root:root}, coll);
   wstl.append({name:"taskLink",href:"/task/",
     rel:["self", "task","collection"],root:root},coll); 
-  wstl.append({name:"userLink",href:"/user/",
-    rel:["user","collection"],root:root},coll);
-  wstl.append({name:"noteLink",href:"/note/",
-    rel:["collection","/rels/note"],root:root},coll);
+  //wstl.append({name:"userLink",href:"/user/",
+  //  rel:["user","collection"],root:root},coll);
+  //wstl.append({name:"noteLink",href:"/note/",
+  //  rel:["collection","/rels/note"],root:root},coll);
   wstl.append({name:"taskProfile",href:"/files/task.profile",
     rel:["profile"],root:root},coll);
   

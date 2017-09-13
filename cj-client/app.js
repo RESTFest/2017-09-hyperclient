@@ -120,6 +120,7 @@ function handler(req, res) {
   catch(ex) {}
  
   // user handler
+  /* 
   try {
     if(flg===false && reUser.test(req.url)) {
       flg = true;
@@ -127,8 +128,10 @@ function handler(req, res) {
     }
   }
   catch(ex) {}
+  */
 
   // note handler
+  /*
   try {
     if(flg===false && reNote.test(req.url)) {
       flg = true;
@@ -136,6 +139,7 @@ function handler(req, res) {
     }
   }
   catch(ex) {}
+  */
 
   // wstl (design-time) handler
   try {
