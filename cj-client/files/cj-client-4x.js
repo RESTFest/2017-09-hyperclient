@@ -529,7 +529,7 @@ function cj() {
 
     q=0;
     form = e.target;
-    query = form.action+"/?";
+    query = form.action+"?";
     nodes = d.tags("input", form);
     for(i=0, x=nodes.length;i<x;i++) {
       if(nodes[i].name && nodes[i].name!=='') {
