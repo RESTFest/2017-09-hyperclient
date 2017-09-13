@@ -102,6 +102,7 @@ function domHelp() {
         inp.value="";
         inp.type="text";
       }
+    }
     
     lbl.className = "data";
     lbl.innerHTML = args.prompt||"";
