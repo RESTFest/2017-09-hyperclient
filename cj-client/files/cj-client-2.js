@@ -78,7 +78,8 @@ function cj() {
     var elm, coll;
     var menu, item, a, img;
     var head, lnk;
-    
+   
+    /* 
     elm = d.find("links");
     d.clear(elm);
     if(g.cj.collection.links) {
@@ -113,6 +114,7 @@ function cj() {
       }
       d.push(menu, elm);
     }
+    */
   }
 
   // handle item collection

@@ -1,5 +1,5 @@
 /*******************************************************
- * cj-client-3 HTML/SPA client engine
+ * cj-client HTML/SPA client engine
  * May 2015
  * Mike Amundsen (@mamund)
  * Soundtrack : Complete Collection : B.B. King (2008)
@@ -8,7 +8,6 @@
  * Benjamin Young (@bigbluehat)
  * Soundtrack : Burn the Clock : Adam Freeland (2003)
  *******************************************************/
-
 
 function cj() {
 
@@ -245,6 +244,61 @@ function cj() {
     var segment;
     var form, fs, header, p, lbl, inp;
 
+    /*
+    elm = d.find("queries");
+    d.clear(elm);
+    if(g.cj.collection.queries) {
+      coll = g.cj.collection.queries;
+      for(var query of coll) {
+        segment = d.node("div");
+        segment.className = "ui segment";
+        form = d.node("form");
+        form.action = query.href;
+        form.className = query.rel;
+        form.method = "get";
+        form.onsubmit = httpQuery;
+        fs = d.node("div");
+        fs.className = "ui form";
+        header = d.node("div");
+        header.innerHTML = query.prompt + "&nbsp;";
+        header.className = "ui dividing header";
+        d.push(header,fs);
+        for(var data of query.data) {
+          p = d.input(
+            {
+              prompt:data.prompt,
+              name:data.name,
+              value:data.value,
+              required:data.required,
+              readOnly:data.readOnly,
+              pattern:data.pattern,
+              type:data.type,
+              max:data.max,
+              min:data.min,
+              maxlength:data.maxlength,
+              size:data.size,
+              step:data.step,
+              suggest:data.suggest
+            },
+            (g.cj.collection.related?g.cj.collection.related:null)
+          );
+          d.push(p,fs);
+        }
+        p = d.node("p");
+        inp = d.node("input");
+        inp.type = "submit";
+        inp.className = "ui mini submit button";
+        d.push(inp, p, fs, form, segment, elm);
+      }
+
+      var wrapper = d.find("queries-wrapper");
+      if (elm.hasChildNodes()) {
+        wrapper.style.display = "block";
+      } else {
+        wrapper.style.display = "none";
+      }
+    }
+    */
   }
   
   // handle template object

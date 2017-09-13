@@ -1,5 +1,5 @@
 /*******************************************************
- * cj-client-4 HTML/SPA client engine
+ * cj-client-4x HTML/SPA client engine
  * May 2015
  * Mike Amundsen (@mamund)
  * Soundtrack : Complete Collection : B.B. King (2008)
@@ -53,13 +53,13 @@ function cj() {
   function title() {
     var elm, str;
 
-    if(hasTitle(g.cj.collection)===true) {
+    //if(hasTitle(g.cj.collection)===true) {
       str = g.cj.collection.title||g.title;
       elm = d.find("title");
       elm.innerText = str;
       elm = d.tags("title");
       elm[0].innerText = str;
-    }
+    //}
   }
 
   // handle content block
@@ -161,7 +161,7 @@ function cj() {
         }
 
         // delete link
-        if(isReadOnly(item)===false) {
+        if(isReadOnly(item)===false && hasTemplate(g.cj.collection)===true) {
           a = d.anchor(
             {
               href:item.href,
@@ -217,12 +217,12 @@ function cj() {
         table = d.node("table");
         table.className = "ui table";
         for(var data of item.data) {
-          if(data.display==="true") {
+          if(data.display == null || data.display==="true") {
             tr = d.data_row(
               {
                 className:"item "+data.name,
-                text:data.prompt+"&nbsp;",
-                value:data.value+"&nbsp;"
+                text:(data.prompt||data.name)+"&nbsp;",
+                value:(data.value||"")+"&nbsp;"
               }
             );
             d.push(tr,table);
@@ -304,6 +304,58 @@ function cj() {
     var elm, coll;
     var form, fs, header, p, lbl, inp;
 
+    /*
+    elm = d.find("template");
+    d.clear(elm);
+    if(hasTemplate(g.cj.collection)===true) {
+      coll = g.cj.collection.template.data;
+      form = d.node("form");
+      form.action = g.cj.collection.href;
+      form.method = "post";
+      form.className = "add";
+      form.onsubmit = httpPost;
+      fs = d.node("div");
+      fs.className = "ui form";
+      header = d.node("div");
+      header.className = "ui dividing header";
+      header.innerHTML = g.cj.collection.template.prompt||"Add";
+      d.push(header,fs);
+      for(var data of coll) { 
+        p = d.input(
+          {
+            prompt:data.prompt+"&nbsp;",
+            name:data.name,
+            value:data.value,
+            required:data.required,
+            readOnly:data.readOnly,
+            pattern:data.pattern,
+            type:data.type,
+            max:data.max,
+            min:data.min,
+            maxlength:data.maxlength,
+            size:data.size,
+            step:data.step,
+            cols:data.cols,
+            rows:data.rows,
+            suggest:data.suggest
+          },
+          (g.cj.collection.related?g.cj.collection.related:null)
+        );
+        d.push(p,fs);
+      }
+      p = d.node("p");
+      inp = d.node("input");
+      inp.className = "ui positive mini submit button";
+      inp.type = "submit";
+      d.push(inp, p, fs, form, elm);
+    }
+
+    if (elm.hasChildNodes()) {
+      elm.style.display = "block";
+    } else {
+      elm.style.display = "none";
+    }
+    */
   }
   
   // handle error object
