@@ -94,7 +94,7 @@ function domHelp() {
     }
     if(flg===false) {
       inp = node("input");
-      if(args) {
+      if(args && args.value !=null) {
         inp.value = args.value.toString()||"";
         inp.type = (args.type||"text");
       }
@@ -105,7 +105,7 @@ function domHelp() {
     }
     
     lbl.className = "data";
-    lbl.innerHTML = args.prompt||"";
+    lbl.innerHTML = args.prompt||args.name;
     inp.name = args.name||"";
     inp.className = inp.className + "value "+ (args.className||"");
     inp.required = (args.required||false);
